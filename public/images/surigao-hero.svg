@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="600" fill="url(#g1)" />
+  <g fill="rgba(255,255,255,0.12)">
+    <ellipse cx="400" cy="460" rx="480" ry="80" />
+    <ellipse cx="1200" cy="520" rx="360" ry="60" />
+  </g>
+  <g transform="translate(80,80)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="56" fill="#fff" font-weight="700">Surigao City</text>
+    <text x="0" y="70" font-family="Inter, Arial, sans-serif" font-size="28" fill="#fff" opacity="0.95">Resilience & Emergency Resources</text>
+  </g>
+  <!-- simple skyline/mountains shape -->
+  <path d="M0 420 C200 340 300 360 480 330 C660 300 760 340 920 320 C1080 300 1240 340 1600 300 L1600 600 L0 600 Z" fill="#083344" opacity="0.25"/>
+</svg>

@@ -1,0 +1,27 @@
+﻿
+Welcome to Pa11y
+
+ > Running Pa11y on URL http://localhost:5173
+node.exe : 
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error: net::ERR_CONNECTION_REFUSED at http://localhost:5173
+    at navigate (C:\Users\auren\OneDrive\Pictures\brgy\node_modules\puppeteer-core\lib\cjs\puppeteer
+\cdp\Frame.js:184:27)
+    at async Deferred.race (C:\Users\auren\OneDrive\Pictures\brgy\node_modules\puppeteer-core\lib\cj
+s\puppeteer\util\Deferred.js:36:20)
+    at async CdpFrame.goto (C:\Users\auren\OneDrive\Pictures\brgy\node_modules\puppeteer-core\lib\cj
+s\puppeteer\cdp\Frame.js:150:25)
+    at async CdpPage.goto (C:\Users\auren\OneDrive\Pictures\brgy\node_modules\puppeteer-core\lib\cjs
+\puppeteer\api\Page.js:572:20)
+    at async gotoUrl (C:\Users\auren\OneDrive\Pictures\brgy\node_modules\pa11y\lib\pa11y.js:246:3)
+    at async runPa11yTest 
+(C:\Users\auren\OneDrive\Pictures\brgy\node_modules\pa11y\lib\pa11y.js:70:2)
+    at async pa11y (C:\Users\auren\OneDrive\Pictures\brgy\node_modules\pa11y\lib\pa11y.js:35:18)
+    at async runProgram 
+(C:\Users\auren\OneDrive\Pictures\brgy\node_modules\pa11y\bin\pa11y.js:136:19)
+

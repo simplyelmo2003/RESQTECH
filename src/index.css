@@ -1,0 +1,178 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+
+/* Brand Color CSS Variables & Typography */
+:root {
+  /* Navy/Teal/Yellow Brand Colors */
+  --brand-navy: #01203F;
+  --brand-navy-alt: #013A6B;
+  --brand-navy-light: #02508A;
+  --brand-teal: #0EA5A3;
+  --brand-yellow: #FFD400;
+  --brand-white: #F7FAFC;
+  --neutral-gray: #1F2937;
+  --text-dark: #1F2937;
+  
+  /* Font Stack */
+  --font-sans: 'Inter', 'Poppins', 'Roboto', system-ui, sans-serif;
+}
+
+/* Custom styles */
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  @apply bg-gradient-to-br from-white via-[#f7fcfb] to-[#F7FAFC]; /* soft gradient */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 250ms ease, color 200ms ease;
+}
+
+/* Subtle link focus/hover */
+a {
+  @apply text-muted hover:text-brand-teal transition-colors duration-200;
+}
+
+/* Hero backgrounds and small hero variant */
+.hero-bg {
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('/images/surigao-hero.jpg');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.hero-bg-sm {
+  background: linear-gradient(90deg, rgba(14,165,233,0.9), rgba(34,197,94,0.9));
+  padding: 0;
+}
+
+/* Typography helpers for consistent headings */
+h1 {
+  @apply text-4xl md:text-6xl font-extrabold tracking-tight;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl font-bold;
+}
+
+.lead {
+  @apply text-lg text-gray-700;
+}
+
+/* Improved default card appearance used when components don't set their own */
+.app-card {
+  @apply bg-white/90 backdrop-blur-sm border border-gray-100 rounded-2xl p-6 shadow-soft transition-transform duration-300 ease-in-out;
+}
+
+/* Small animation utilities */
+.fade-in-up {
+  animation: fadeInUp .45s ease both;
+}
+
+/* Leaflet map container fixes */
+.leaflet-container {
+  background: #e3e3e3 !important;
+  z-index: 1;
+}
+
+.leaflet-tile {
+  filter: none;
+}
+
+.leaflet-tile-pane {
+  z-index: 2;
+}
+
+/* Ensure tile layer loads properly */
+.leaflet-layer img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+}
+
+/* Map controls styling */
+.leaflet-control-routing {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  max-width: 300px !important;
+  z-index: 900;
+  position: fixed !important;
+}
+
+.leaflet-routing-container {
+  background: white;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 900;
+}
+
+/* Fix routing machine panel appearance */
+.leaflet-routing-alt {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.leaflet-routing-error {
+  background-color: #fee;
+  color: #c33;
+}
+
+/* Ensure routing waypoints display correctly */
+.leaflet-marker {
+  z-index: 400;
+}
+
+.leaflet-popup {
+  z-index: 600;
+}
+
+/* Hide routing instruction summary and panel completely */
+.leaflet-routing-summary {
+  display: none !important;
+}
+
+.leaflet-routing-container {
+  display: none !important;
+}
+
+/* Ensure map panes are correct */
+.leaflet-map-pane {
+  z-index: 1;
+}
+
+.leaflet-control-pane {
+  z-index: 1000;
+}
+
+/* Make sure overlay pane displays above tiles */
+.leaflet-overlay-pane {
+  z-index: 400;
+}
+
+/* Additional routing panel hiding to prevent white screen */
+.leaflet-routing {
+  background: white;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.leaflet-routing-instruction {
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.leaflet-routing-instruction:last-child {
+  border-bottom: none;
+}
+
+/* Ensure no full-screen white divs */
+.leaflet-routing-alt-wrapper {
+  max-height: 250px;
+  overflow-y: auto;
+}

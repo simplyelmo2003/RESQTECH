@@ -1,0 +1,47 @@
+let DUMMY_ADMIN_ALERTS: AdminEmergencyAlert[] = [
+  {
+    id: 'alert-001',
+    title: 'Typhoon Advisory for Surigao Region',
+    description: 'Typhoon systems may bring heavy rains to Surigao. Expect strong winds and potential flooding.',
+    source: 'PAGASA',
+    level: 'High',
+    issuedAt: formatISO(new Date(Date.now() - 2 * 3600 * 1000)),
+    expiresAt: formatISO(new Date(Date.now() + 24 * 3600 * 1000)),
+    areaAffected: 'Surigao City, Caraga Region',
+    link: 'https://www.pagasa.dost.gov.ph',
+    status: 'active',
+  },
+  {
+    id: 'alert-002',
+    title: 'Tropical Storm Warning',
+    description: 'Tropical storm expected to pass through Surigao region. Residents advised to secure loose objects and avoid flood-prone areas.',
+    source: 'NDRRMC',
+    level: 'Moderate',
+    issuedAt: formatISO(new Date(Date.now() - 24 * 3600 * 1000)),
+    expiresAt: formatISO(new Date(Date.now() + 7 * 24 * 3600 * 1000)),
+    areaAffected: 'Surigao City, Caraga Region',
+    link: 'https://www.ndrrmc.gov.ph',
+    status: 'archived', // This one is archived
+  },
+  {
+    id: 'alert-003',
+    title: 'Flood Warning for Surigao City',
+    description: 'Moderate to heavy rainfall expected over Surigao City. Monitor flood levels in low-lying barangay areas.',
+    source: 'NDRRMC',
+    level: 'Low',
+    issuedAt: formatISO(new Date(Date.now() - 30 * 60 * 1000)),
+    areaAffected: 'Surigao City',
+    link: 'https://www.ndrrmc.gov.ph',
+    status: 'active',
+  },
+  {
+    id: 'alert-004',
+    title: 'Local Alert: Road Maintenance',
+    description: 'Domingo Street between San Jose and San Roque barangays is closed due to road maintenance. Please use alternative routes.',
+    source: 'Admin',
+    level: 'Low',
+    issuedAt: formatISO(new Date(Date.now() - 15 * 60 * 1000)),
+    areaAffected: 'Domingo St, Surigao City',
+    status: 'active',
+  }
+];
