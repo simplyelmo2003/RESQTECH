@@ -5,11 +5,14 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
-    "postinstall": "prisma generate",
+    "postinstall": "npx prisma generate",
     "start": "node dist/index.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name init",
     "seed": "ts-node src/seed.ts"
+  },
+  "dependencies": {
+    "prisma": "^6.19.0"
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
