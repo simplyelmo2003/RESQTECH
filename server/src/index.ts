@@ -3,7 +3,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import prisma, { ensureConnection } from './prismaClient';
 
-dotenv.config();
+// Only load .env in development, not in production (e.g., Render)
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 const app = express();
 app.use(cors());
