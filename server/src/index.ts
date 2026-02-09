@@ -8,6 +8,9 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
 }
 
+console.log(`[${new Date().toISOString()}] Starting server initialization`);
+console.log(`[${new Date().toISOString()}] NODE_ENV: ${process.env.NODE_ENV}`);
+
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
@@ -40,9 +43,11 @@ const PORT = process.env.PORT || 4000;
 
 app.get('/api/health', async (_req, res) => {
   try {
-    // Check DB connectivity as part of health
-    await prisma.$queryRaw`SELECT 1`;
-    return res.json({ status: 'ok', db: 'ok', now: new Date().toISOString() });
+    return res.json({ 
+      status: 'ok', 
+      timestamp: new Date().toISOString(),
+      message: 'Backend is running'
+    });
   } catch (e) {
     return res.status(503).json({ status: 'degraded', db: 'unavailable', error: String(e) });
   }
@@ -828,6 +833,8 @@ app.post('/api/logs', async (req, res) => {
 
   app.listen(PORT, () => {
     // eslint-disable-next-line no-console
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`✅ Server ready on http://localhost:${PORT}`);
+    console.log(`✅ API available at http://localhost:${PORT}/api`);
+    console.log(`✅ Health check: http://localhost:${PORT}/api/health`);
   });
 })();

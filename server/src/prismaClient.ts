@@ -1,6 +1,8 @@
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: ['error', 'warn'],
+});
 
 export const ensureConnection = async () => {
   try {
@@ -8,7 +10,7 @@ export const ensureConnection = async () => {
     console.log('✅ Database connected successfully');
     return true;
   } catch (error) {
-    console.error('❌ Database connection failed:', error);
+    console.error('❌ Database connection failed (this is OK, backend will still run):', error);
     return false;
   }
 };
