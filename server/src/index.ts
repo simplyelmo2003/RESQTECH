@@ -821,8 +821,9 @@ app.post('/api/logs', async (req, res) => {
   const ok = await ensureConnection();
   if (!ok) {
     // eslint-disable-next-line no-console
-    console.error('Failed to connect to the database after multiple attempts; exiting.');
-    process.exit(1);
+    console.warn('⚠️ Warning: Could not connect to database on startup.');
+    console.warn('Check DATABASE_URL environment variable and Supabase status.');
+    console.warn('Server will still start; database queries will fail until connection is established.');
   }
 
   app.listen(PORT, () => {
